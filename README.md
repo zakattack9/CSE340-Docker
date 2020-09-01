@@ -3,7 +3,7 @@ CSE340 Docker image for testing code on Ubuntu Bionic
 
 ### Prerequisites
 - [Docker Desktop](https://docs.docker.com/get-docker/)
-- debugging with `gdb` breakpoints
+- knowledge on debugging with `gdb` breakpoints
 
 ### What's included in this image
 - `Ubuntu 18.04`
