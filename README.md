@@ -14,8 +14,13 @@
 - `libc6-dev`
 
 ## How to run
-1. `docker build -t cse340 .` to build and tag Docker image
-2. `docker run --rm -it -v "$(pwd):/testing" -w /testing cse340`
+```bash
+# to build and tag Docker image
+$ docker build -t cse340 . 
+
+# to bind mount current directory and create container
+$ docker run --rm -it -v "$(pwd):/testing" -w /testing cse340
+```
 
 ## Notes
 - the above `docker run` command will bind mount the current directory that it's executed in; this means any file changes in this directory will be directly reflected in the Docker container's file system therefore, you do not need to re-execute the run command when any changes are made in the execution directory
