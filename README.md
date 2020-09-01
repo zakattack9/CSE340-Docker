@@ -32,6 +32,7 @@ $ docker build -t cse340 .
 ```
 
 ### Notes
+- **For Windows** makes sure that your C drive is selected under *Shared Drives* in the Docker Desktop settings
 - the above `docker run` command will bind mount the current directory that it's executed in; this means any file changes in this directory will be directly reflected in the Docker container's file system therefore, you do not need to re-execute the run command when any changes are made in the execution directory
 - the current directory's files is copied under a `/testing` folder in the Docker container; the `-w` option will automatically navigate to this directory upon the container's startup
 - `ctrl + d` will exit the container's bash shell and automatically delete the container for cleanup due to the `--rm` option
