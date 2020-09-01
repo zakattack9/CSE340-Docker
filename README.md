@@ -19,11 +19,14 @@ CSE340 Docker image for testing code on Ubuntu Bionic
 # pull down CSE 340 testing image 
 $ docker pull zakattack9/cse340:latest
 
+# re-tag pulled down image
+$ docker tag zakattack9/cse340:latest cse340
+
 # bind mount current directory and create container
 $ docker run --rm -it -v "$(pwd):/testing" -w /testing cse340
 ```
 
-Alternatively, you may also fork and clone this repo and build the image locally with
+Alternatively, if further customization of the Dockerfile is needed, fork and clone this repo then build the image locally with
 ```bash
 $ docker build -t cse340 . 
 ```

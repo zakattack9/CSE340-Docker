@@ -11,6 +11,3 @@ RUN apt-get install -y \
   build-essential \
   gdb \
   manpages-dev 
-
-# command to run on container start
-#CMD[]
