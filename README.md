@@ -25,7 +25,7 @@ $ docker tag zakattack9/cse340:latest cse340
 # ...navigate to project directory...
 
 # bind mount current directory and create container with a bash shell
-$ docker run --rm -it -v "$(pwd):/root/testing" -w "/root/testing" cse340 && ./cleanup.sh
+$ docker run --rm -it -v "`pwd`:/root/testing" -w "/root/testing" cse340 && ./cleanup.sh
 ```
 
 Alternatively, if further customization of the Dockerfile is desired, fork and clone this repo then build the image locally with
