@@ -25,7 +25,7 @@ $ docker tag zakattack9/cse340:latest cse340
 # ...navigate to project directory...
 
 # bind mount current directory and create container with a bash shell
-$ docker run --rm -it -v "$(pwd):/testing" -w /testing cse340 && ./cleanup.sh
+$ docker run --rm -it -v "$(pwd):/root/testing" -w "/root/testing" cse340 && ./cleanup.sh
 ```
 
 Alternatively, if further customization of the Dockerfile is desired, fork and clone this repo then build the image locally with
@@ -41,7 +41,7 @@ $ docker build -t cse340 .
 5) If errors, add `gdb` configurations to `.gdbinit` *(e.g. breakpoints)*
 6) Re-compile with with `gcc` or `g++` using `-g` flag
 7) Start `gdb` to debug code
-8) Exit debugger with `ctrl + c` and repeat from step 2
+8) Exit debugger with `q` and repeat from step 2
 9) When finished, `ctrl + d` to exit container and auto clean up files
 
 ### Additional Notes
