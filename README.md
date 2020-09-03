@@ -49,5 +49,5 @@ $ docker build -t cse340 .
 - all files and folders in the `docker run` execution directory are copied under a `/testing` folder in the Docker container; the `-w` option will automatically navigate to this directory during the container's startup
 - the `docker run` command above creates a container that will bind mount the current directory that it's executed in; this means any file changes in the current directory or in the Docker container's `/testing` directory will be directly reflected on both ends allowing for a live compilation and testing environment
 - with the `--rm` option, using `ctrl + d` will exit the container's bash shell and automatically delete the container
-- a `.gdbinit` is automatically created upon running the container and is executed when starting gdb
+- a `.gdbinit` is automatically created upon running the container and all commands inside it are executed *only* when starting gdb with `gdb <program>`
 - the `cleanup.sh` script will automatically remove `.gdbinit`, `cleanup.sh`, and all C/C++ object files when the container is stopped iff `&& ./cleanup.sh` is appended to the end of the `docker run` command above
