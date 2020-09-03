@@ -3,7 +3,7 @@ CSE340 Docker image for compiling, running, and debugging C/C++ code in an Ubunt
 
 ### Prerequisites
 - [Docker Desktop](https://docs.docker.com/get-docker/)
-- knowledge on debugging with [gdb](https://sourceware.org/gdb/current/onlinedocs/gdb/)
+- Knowledge on debugging with [gdb](https://sourceware.org/gdb/current/onlinedocs/gdb/)
 
 ### What's included in this image
 - `Ubuntu 18.04`
@@ -45,9 +45,9 @@ $ docker build -t cse340 .
 9) When finished, `ctrl + d` to exit container and auto clean up files
 
 ### Additional Notes
-- **for Windows** makes sure that your *C* drive is selected under *Resources > File Sharing* in the Docker Desktop settings
-- all files and folders in the `docker run` execution directory are copied under a `/testing` folder in the Docker container; the `-w` option will automatically navigate to this directory during the container's startup
-- the `docker run` command above creates a container that will bind mount the current directory that it's executed in; this means any file changes in the current directory or in the Docker container's `/testing` directory will be directly reflected on both ends allowing for a live compilation and testing environment
-- with the `--rm` option, using `ctrl + d` will exit the container's bash shell and automatically delete the container
-- a `.gdbinit` is automatically created upon running the container and all commands inside it are executed *only* when starting gdb with `gdb <program>`
-- the `cleanup.sh` script will automatically remove `.gdbinit`, `cleanup.sh`, and all C/C++ object files when the container is stopped iff `&& ./cleanup.sh` is appended to the end of the `docker run` command above
+- **For Windows** makes sure that your *C* drive is selected under *Resources > File Sharing* in the Docker Desktop settings
+- All files and folders in the `docker run` execution directory are copied under a `/testing` folder in the Docker container; the `-w` option will automatically navigate to this directory during the container's startup
+- The `docker run` command above creates a container that will bind mount the current directory that it's executed in; this means any file changes in the current directory or in the Docker container's `/testing` directory will be directly reflected on both ends allowing for a live compilation and testing environment
+- With the `--rm` option, using `ctrl + d` will exit the container's bash shell and automatically delete the container
+- `.gdbinit` is automatically created upon running the container and all commands inside it are executed *only* when starting gdb with `gdb <program>`
+- `cleanup.sh` script will automatically remove `.gdbinit`, `cleanup.sh`, and all C/C++ object files when the container is stopped iff `&& ./cleanup.sh` is appended to the end of the `docker run` command above
